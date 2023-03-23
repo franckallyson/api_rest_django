@@ -10,7 +10,7 @@
     <li>
         <h3>1. Linguagem e Framework Escolhido</h3>
         <div style="padding-left: 30px;">
-            Para este exercício, foi escolhido a linguagem Python e o Framework Django.<br> O Django disponibiliza a utilização de outro framework, o <i>Django Rest Framework</i>, e com isso a implementação fica <b>extremamente</b> fácil! Vamos continuar!
+            Para este exercício, foi escolhido a linguagem Python e o Framework <a href="https://www.djangoproject.com/">Django</a>.<br> O Django disponibiliza a utilização de outro framework, o <i>Django Rest Framework</i>, e com isso a implementação fica <b>extremamente</b> fácil! Vamos continuar!
         </div>
     </li>
     <hr>
@@ -105,6 +105,83 @@
                 <div style="padding-left: 30px;">
                     Neste momento iremos ver um passo a passo de como replicar o projeto feito nessa atividade. Irei lhe ensinar minuciosamente cada passo até chegar ao Deploy e testagem. 
                 </div>
+                <ol style="list-style: none;">
+                    <li>
+                        <h5>4.3.1. Preparação do ambiente</h5>
+                        <div style="padding-left: 30px;">
+                            <ul>
+                                <li>
+                                Tenha o Python instalado em sua máquina. Para isso, basta entrar neste link: <a href="https://www.python.org/downloads/">Download Python</a>.
+                                </li>
+                                <br>
+                                <li>
+                                Tenha um Editor de Código instalado em sua máquina. Recomendo tanto o <a href="https://www.jetbrains.com/pycharm/">PyCharm</a>, quanto o <a href="https://code.visualstudio.com/">VsCode</a>. Para esse tutorial, recomendamos o PyCharm, por ter sido o usado para o desenvolvimento dessa API. 
+                                </li>
+                                <br>
+                                <li>
+                                    <h6>Criação do Projeto</h6>
+                                    <div style="padding-left: 30px;">
+                                        Primeiramente você precisa entender o que é <b>ambiente virtual</b>. O ambiente virtual é nada mais do que uma forma de encapsular o que tudo o que o seu projeto terá: Dependências, Bibliotecas, etc. Ele permite que você isole todas as necessidades do projeto X e que ao criar um projeto Y, você não tenha as necessidades do X já instaladas, afinal, pode ser que você não precise de nenhuma. 
+                                        <br><br>
+                                        Para criar um projeto, basta ir no canto superior direito da sua IDE, clicar em <b>File</b>, e procurar por algo parecido com <b>New Project</b>, siga as instruções. 
+                                        <br><br>
+                                        Eu vou criar o meu projeto com o nome de <i>api_rest_django</i>. Para alterar o nome, mude o último nome na localização do seu projeto, veja: 
+                                        <img src="https://img001.prntscr.com/file/img001/fVA65jZzSKCkxLDsh1wI2w.png">
+                                        <img src="https://img001.prntscr.com/file/img001/hREm_EQERRKYT80QLS6T7A.png">
+                                        <br><br>
+                                        O PyCharm na aba de criação, já permite que você crie um ambiente virtual na criação do projeto, veja: 
+                                        <img src="https://img001.prntscr.com/file/img001/wMi2CP6tQtS3iQv4j7AHVw.png">
+                                        <br>
+                                        Caso você selecione a segunda opção: <i>Previously Cofigured interpreter</i>, você não irá criar um ambiente virtual e terá que fazer isso manualmente via terminal. Iremos explicar a você como executar isso. 
+                                        <br><br>
+                                        Após criar seu projeto, caso não tenha o Ambiente virtual já definido, abra o terminal e digite os seguintes comandos:<br><br>
+                                        <kbd style="background-color: grey; color: white;"> 
+                                            python -m venv NOME_DO_AMBIENTE_VIRTUAL
+                                        </kbd><br><br>
+                                        Lembrando que NOME_DO_AMBIENTE_VIRTUAL é uma variável que você escolhe o nome. <br>
+                                        Para ativar o Ambiente virtual, basta digitar: <br><br>
+                                        <kbd style="background-color: grey; color: white;"> 
+                                            NOME_DO_AMBIENTE_VIRTUAL/Scripts/activate
+                                        </kbd><br><br>
+                                        Pronto! Para verificar se foi ativo ou não, basta observar a linha de inserção do terminal, á esqueda dela você terá o nome do ambiente virtual entre parênteses. Exemplo:
+                                        <br><br>
+                                        <kbd style="background-color: grey; color: white;"> 
+                                            (NOME_DO_AMBIENTE_VIRTUAL)  PS C:\Users\Franck\Faculdade\api_rest_django> 
+                                        </kbd><br><br>
+                                        <b>Pronto! Estamos prontos para começar, o nosso ambiente de desenvolvimento está preparado!</b>
+                                    </div>
+                                </li>
+                                <li>
+                                    <h6>Instalação das dependências</h6>
+                                    <div style="padding-left: 30px;">
+                                        Como já dissemos mais acima, as dependências do projeto não são muitas. Como o python já está instalado em sua máquina (Conforme solicitamos), você terá que instalar apenas as outras duas, use essas linhas de código no terminal: <br><br>
+                                        <kbd style="background-color: grey; color: white;"> 
+                                            pip install Django
+                                        </kbd><br>
+                                        O <a href="https://www.djangoproject.com/">Django</a> é um framework para desenvolvimento Web utilizando a linguagem python, iremos usar ele pois a estrutura e a forma como ele trabalha torna o nosso trabalho muito fácil. <br><br>
+                                        <kbd style="background-color: grey; color: white;"> 
+                                            pip install djangorestframework
+                                        </kbd><br>
+                                        O <a href="https://www.django-rest-framework.org/">Django Rest Framework</a> é outra ferramenta que utilizaremos, ela tem como principal função auxiliar na produção de APIs Rest. 
+                                    </div>
+                                </li>
+                                <li>
+                                    <h6>Inicio da produção</h6>
+                                    <div style="padding-left: 30px;">
+                                        Com as dependências instaladas, iremos começar a produção. <br><br>
+                                        O primeiro comando que daremos ao terminal é:<br><br>
+                                        <kbd style="background-color: grey; color: white;"> 
+                                            django-admin startproject NOME_DO_PROJETO
+                                        </kbd><br>
+                                        Este comando irá criar uma pasta que contem arquivos de configuração do seu site, portanto, escolhemos o nome config para ele. Veja a estrutura gerada:
+                                        <img src="https://img001.prntscr.com/file/img001/FDEpFSM6ReqMUF9o2sn1KQ.png"><br>
+                                        <b>Obs: </b><i>script</i> é o nome do nosso ambiente virtual. 
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ol>
             </li>
         </ul>
     </li>
