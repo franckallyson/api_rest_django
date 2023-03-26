@@ -4,16 +4,24 @@
     <h4>4º Período | BSI | IFNMG Campus Salinas</h4>
 </div>
 
+<hr>
+
 1. [Linguagem e Framework](#ling_frame)
 2. [Banco de Dados Escolhido](#bd)
 3. [DBaaS Escolhido](#dbaas)
 4. [Documentação do projeto](#doc)
-4.1. [Descrição e Objetivos](#desc_obj)
-4.2. [Tecnologias utilizadas](#tec)
-4.3. [Como replicar o Projeto](#replica)
-4.4. [Como utilizar a API](#util)
-4.5. [Deploy de uma API](#deploy)
-4.6. [Endpoints Disponíveis](#endpoints)
+
+    4.1. [Descrição e Objetivos](#desc_obj)
+    
+    4.2. [Tecnologias utilizadas](#tec)
+    
+    4.3. [Como replicar o Projeto](#replica)
+    
+    4.4. [Como utilizar a API](#util)
+    
+    4.5. [Deploy de uma API](#deploy)
+    
+    4.6. [Endpoints Disponíveis](#endpoints)
 5. [Creditos](#credits)
 6. [Licença](#licenca)
 
