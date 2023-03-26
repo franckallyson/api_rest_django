@@ -17,7 +17,6 @@ from django.contrib import admin
 from django.urls import path, include
 from biblioteca.views import BooksViewSet, AuthorViewSet, GenreViewSet, LanguageViewSet
 from rest_framework import routers
-from django.views.generic import RedirectView
 
 router = routers.DefaultRouter()
 router.register(r'books', BooksViewSet)
